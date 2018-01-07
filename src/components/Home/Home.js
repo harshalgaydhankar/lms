@@ -5,6 +5,7 @@ import Navigation from '../MyNav/Navigation';
 import Paper from 'material-ui/Paper';
 import ChangePassword from '../ChangePassword/CP';
 import LeaveApplication from '../LeaveApplication/LA';
+import LeaveApplicationStatus from '../LeaveStatus/LS';
 
 
 class Home extends Component {
@@ -29,10 +30,18 @@ class Home extends Component {
     var displayString = '';
     switch (index) {
       case 0:
+
         displayString = (
           <LeaveApplication userData={this.props.userData}/>
         )
         this.setState({displayString});
+        break;
+      case 1:
+      displayString = (
+        <LeaveApplicationStatus userData={this.props.userData}/>
+      )
+      this.setState({displayString});
+
         break;
       case 8:
         displayString = (

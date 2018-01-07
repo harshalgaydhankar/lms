@@ -38,4 +38,11 @@ router.get('/applyLeave', function(req, res, next) {
   });
 });
 
+router.get('/leaveStatus', function(req, res, next) {
+  
+  Leaves.getLeavesStatus(req.query.userName,(data) =>{
+          res.json({'output':data});
+  })
+});
+
 module.exports = router;

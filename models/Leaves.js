@@ -15,6 +15,17 @@ class Leaves {
     });
   }
 
+  static getLeavesStatus(userName,cb){
+    connection.query("SELECT * from leaves where userName ='"+userName+"'", function(err, rows, fields) {
+       if (!err){
+         console.log(rows);
+         cb(rows);
+       }
+       else
+         console.log('Error while performing Query.');
+     });
+  }
+
 }
 
 module.exports = Leaves;
